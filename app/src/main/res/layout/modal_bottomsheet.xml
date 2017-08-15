@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#F3F3F3"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:text="@string/bs_header"
+        android:gravity="center"
+        android:textColor="#B0B0B0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="20dp">
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/ic_raising"
+                android:background="#fff"
+                />
+            <Button
+                android:text="Party"
+                style="@style/action_button_bs"
+                android:textAllCaps="false"
+                android:id="@+id/btnParty"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/ic_people"
+                android:background="#fff"
+                />
+            <Button
+                android:text="Wedding Contribution"
+                style="@style/action_button_bs"
+                android:id="@+id/btnWedding"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/ic_party"
+                android:background="#fff"
+                />
+            <Button
+                android:text="BirthDay Surprise"
+                style="@style/action_button_bs"
+                android:id="@+id/btnBDParty"/>
+        </LinearLayout>
+
+       <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/ic_raising"
+                android:background="#fff"
+                />
+            <Button
+                android:text="Bridal shower"
+                style="@style/action_button_bs"
+                android:textAllCaps="false"
+                android:id="@+id/btnBride"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/ic_raising"
+                android:background="#fff"
+                />
+            <Button
+                android:text="Merry go round (Ikimina)"
+                style="@style/action_button_bs"
+                android:textAllCaps="false"
+                android:id="@+id/btnMerry"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/ic_raising"
+                android:background="#fff"
+                />
+            <Button
+                android:text="FundRaising"
+                style="@style/action_button_bs"
+                android:textAllCaps="false"
+                android:id="@+id/btnFundRaising"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/ic_others"
+                android:background="#fff"
+                />
+            <Button
+                android:text="Other"
+                style="@style/action_button_bs"
+                android:textAllCaps="false"
+                android:id="@+id/btnOther"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:text="@string/bs_cancel"
+                android:textColor="#D04D5B"
+                android:layout_width="match_parent"
+                android:textAlignment="center"
+                style="@style/action_button_bs"
+                android:id="@+id/btn_cancel"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+
+
+
+
