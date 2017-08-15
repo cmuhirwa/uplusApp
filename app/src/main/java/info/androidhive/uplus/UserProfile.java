@@ -10,6 +10,7 @@ import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
+import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -17,6 +18,8 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.ToolbarWidgetWrapper;
 import android.text.format.Time;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,6 +38,7 @@ import java.util.Calendar;
 
 import info.androidhive.uplus.activity.AddGroup;
 import info.androidhive.uplus.activity.SharedPrefManager;
+import info.androidhive.uplus.fragments.Chats;
 
 public class UserProfile extends AppCompatActivity {
     RecyclerView recyclerView;
@@ -47,6 +51,8 @@ public class UserProfile extends AppCompatActivity {
     final Context context = this;
     private Button btnSend;
     private ImageButton btnCloseProfileDialog;
+    private GestureDetectorCompat gestureObject;
+
     EditText editView,txtAmountToSend,txtFromPhone;
     public Toolbar contactToolbar;
     ImageView imgContact;
@@ -56,6 +62,7 @@ public class UserProfile extends AppCompatActivity {
     ProgressDialog progress;
     TransactionDB transactionDB;
     public static Activity fa;
+    ImageButton myChatButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +81,18 @@ public class UserProfile extends AppCompatActivity {
         textView1 = (TextView)findViewById(R.id.username) ;
         userMobile  =(TextView)findViewById(R.id.txtMobile);
         userPhone = (TextView)findViewById(R.id.userPhone);
+        myChatButton = (ImageButton) findViewById(R.id.personChat);
+        gestureObject = new GestureDetectorCompat(this, new LearnGesture());
+
+        myChatButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+               Intent i = new Intent(UserProfile.this, Activity2.class);
+                startActivity(i);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+               // Toast.makeText(getApplicationContext(),"We are going to help you",Toast.LENGTH_LONG).show();
+            }
+        });
         if(bundle.getString("user") != null){
             name = bundle.getString("user");
 
@@ -256,7 +275,44 @@ public class UserProfile extends AppCompatActivity {
 
 
     }
+
+
+    public boolean onTouchEvent(MotionEvent event) {
+        this.gestureObject.onTouchEvent(event);
+        return super.onTouchEvent(event);
+    }
+
+    class LearnGesture extends GestureDetector.SimpleOnGestureListener{
+
+        @Override
+        public boolean onFling(MotionEvent event1, MotionEvent event2, float velocityX, float velocity){
+            if(event2.getX() > event1.getX()){
+
+
+
+
+            }
+            else
+            if(event2.getX() < event1.getX()){
+                Intent i = new Intent(UserProfile.this, Activity2.class);
+                startActivity(i);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+               // Toast.makeText(getApplicationContext(),"Slided left",Toast.LENGTH_LONG).show();
+
+            }
+            return  true;
+        }
+    }
+
+
+
+
+
+
     //FUNCTION TO CHECK IF MY NUMBER IS MTN OR TIGO
+
+
+
     public String validateMyPhone(String data)
     {
         String senderBank="";

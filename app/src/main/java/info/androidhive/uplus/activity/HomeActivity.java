@@ -56,7 +56,7 @@ public class HomeActivity extends AppCompatActivity {
     ImageButton myImageButton;
     public int count;
     static int counter=0;
-     OneFragment oneFragment;
+    OneFragment oneFragment;
     RecyclerView.LayoutManager layoutManager;
     RecyclerView recyclerView;
     private Toolbar toolbar;
@@ -102,7 +102,7 @@ public class HomeActivity extends AppCompatActivity {
                 myImageButton.setOnClickListener(new View.OnClickListener(){
                     @Override
                     public void onClick(View v){
-                        dialog.dismiss();
+                       // dialog.dismiss();
                         Toast.makeText(getApplicationContext(),"We are going to help you",Toast.LENGTH_LONG).show();
                     }
                 });
@@ -110,11 +110,10 @@ public class HomeActivity extends AppCompatActivity {
 
                 dialog.show();
 
-                 return true;
+                return true;
 
             default: return super.onOptionsItemSelected(item);
         }
-
     }
 
 
@@ -129,11 +128,11 @@ public class HomeActivity extends AppCompatActivity {
 
         if (BuildConfig.DEBUG) {
             StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
-                    .detectLeakedSqlLiteObjects()
-                    .detectLeakedClosableObjects()
-                    .penaltyLog()
-                    .penaltyDeath()
-                    .build());
+                .detectLeakedSqlLiteObjects()
+                .detectLeakedClosableObjects()
+                .penaltyLog()
+                .penaltyDeath()
+                .build());
         }
 
         super.onCreate(savedInstanceState);
